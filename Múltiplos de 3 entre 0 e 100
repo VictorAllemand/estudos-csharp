@@ -17,3 +17,37 @@ public class Program
         Console.ReadLine();
     }
 }
+
+
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Bem-vindo ao sistema de financiamento de carro!");
+
+        Console.Write("Digite o valor do carro: R$ ");
+        float valorCarro = float.Parse(Console.ReadLine());
+
+        Console.Write("Digite o valor da entrada: R$ ");
+        float valorEntrada = float.Parse(Console.ReadLine());
+
+        Console.Write("Digite o valor percentual dos juros mesais: ");
+        float valorPercentual = float.Parse(Console.ReadLine());
+
+        Console.Write("Digite a quantidade de meses para pagar o restante: ");
+        int mesesParaPagar = Convert.ToInt32(Console.ReadLine());
+
+        float valorRestante = valorCarro - valorEntrada;
+        float valorMensal = valorRestante / mesesParaPagar * (valorPercentual+1);
+
+        Console.WriteLine("\nDetalhes do financiamento:");
+        Console.WriteLine("Valor do carro: R$ " + valorCarro);
+        Console.WriteLine("Valor da entrada: R$ " + valorEntrada);
+        Console.WriteLine("Valor a ser financiado: R$ " + valorRestante);
+        Console.WriteLine("Juros pagos com o financiamento: R$ " + valorRestante*valorPercentual);
+        Console.WriteLine("Quantidade de meses para pagar: " + mesesParaPagar);
+        Console.WriteLine("Valor mensal a ser pago: R$ " + valorMensal);
+    }
+}
